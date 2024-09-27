@@ -25,8 +25,12 @@ DELETE Person WHERE PersonID = 3
 
 -- 1. Inner Join
 SELECT p.PersonID,p.Name,i.Completed
-FROM Items i INNER JOIN Person P ON i.PersonID = p.PersonID 
+FROM Person p INNER JOIN Items i ON p.PersonID = i.PersonID 
 
 -- 2. Left Join
 SELECT p.PersonID,p.Name,i.Completed
-FROM Items i INNER JOIN Person P ON i.PersonID = p.PersonID 
+FROM Person p LEFT JOIN Items i ON p.PersonID = i.PersonID 
+
+-- Tipos de indexes
+--   Index Cluster -> Primary Key
+--   Non Cluster Index --> Indices adicionales
